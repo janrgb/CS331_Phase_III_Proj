@@ -1,16 +1,33 @@
 <?php
-    /* Use PDO to connect to database. */
-    $hostname = 'localhost';
-    $username = 'root';
-    $db_name = 'auth';
+    include('connection.php');
 
-    try
+    /* Let's extract the username and password. */
+    if(isset($_POST['submit']))
     {
-        $dbh =  new PDO("mysql:host=$hostname;dbname=$db_name", $username);
-        echo "Connected to the database.";
-    }
-    catch (PDOException $e)
-    {
-        echo "Error connecting to database.";
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        /* Login logic. Whatever username/password the user enters, we will check to see whether that is in. */
+        $sql = "SELECT * FROM LOGIN WHERE username = :username AND password = :password";
+        
+        /* PDO sanitization. */
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':username', $username);
+        $stmt->bindValue(':password', $password);
+        $stmt->execute();
+
+        $row_count = $stmt->rowCount();
+
+        /* Check count. */
+        if ($row_count == 1)
+        {
+            header("Location:homepage.php");
+        }
+        else
+        {
+            echo '<script>
+                window.location.href = "index.php";
+            </script>';
+        }
     }
 ?>

@@ -1,6 +1,6 @@
 <!-- This will be the FRONTEND for the project. -->
 <?php 
-    include("login.php");
+    include("connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -18,7 +18,7 @@
             <h1>Login</h1>
             
             <!-- A form that will redirect to another php file that will handle authentication. -->
-            <form action="login.php" method="POST">
+            <form name="form" action="login.php" method="POST">
                 <label for="username">Username: </label>
                 <input type="text" name="username" id="username" placeholder="Username" required>
                 <br><br>
