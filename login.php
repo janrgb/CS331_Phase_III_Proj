@@ -1,13 +1,16 @@
 <?php
-    $servername = "localhost";
-    $username = "JanTop";
-    $password = "root";
-    $db_name = "auth";
-    $conn = new mysqli($servername, $username, $password, $db_name, 3306);
+    /* Use PDO to connect to database. */
+    $hostname = 'localhost';
+    $username = 'root';
+    $db_name = 'auth';
 
-    if ($conn->connect_error)
+    try
     {
-        die("connection failed.".$conn->connect_error);
+        $dbh =  new PDO("mysql:host=$hostname;dbname=$db_name", $username);
+        echo "Connected to the database.";
     }
-    echo "Connection successful!";
+    catch (PDOException $e)
+    {
+        echo "Error connecting to database.";
+    }
 ?>

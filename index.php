@@ -1,4 +1,7 @@
 <!-- This will be the FRONTEND for the project. -->
+<?php 
+    include("login.php");
+?>
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
