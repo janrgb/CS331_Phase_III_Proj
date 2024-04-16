@@ -1,30 +1,13 @@
 <?php
-session_start();
+    $servername = "localhost";
+    $username = "JanTop";
+    $password = "root";
+    $db_name = "auth";
+    $conn = new mysqli($servername, $username, $password, $db_name, 3306);
 
-/* Database connection: replace w/ actual credentials. */
-$db = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'username', 'password');
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST')
-{
-    $username = $_POST['username'];
-    $passwod = $_POST['password'];
-
-    /* Validate input. */
-
-    /* Check credentials against DB. */
-    $query = $db->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
-    $query->execute([$username, $password]);
-    $user = $query->fetch(PDO::FETCH_ASSOC);
-
-    if ($user)
+    if ($conn->connect_error)
     {
-        $_SESSION['user_id'] = $user['id'];
-        header('Location: dashboard.php');
-        exit;
+        die("connection failed.".$conn->connect_error);
     }
-    else
-    {
-        $error = 'Invalid credentials.'
-    }
-
-}
+    echo "Connection successful!";
+?>
