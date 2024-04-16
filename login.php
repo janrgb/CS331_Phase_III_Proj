@@ -1,3 +1,4 @@
+<!-- BACKEND FILE -->
 <?php
     include('connection.php');
 

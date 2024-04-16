@@ -1,3 +1,4 @@
+<!-- BACKEND FILE -->
 <?php
     /* Use PDO to connect to database. */
     $hostname = 'localhost';

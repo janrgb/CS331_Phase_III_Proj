@@ -1,0 +1,53 @@
+body
+{
+    background-color: purple;
+    height: auto;
+}
+
+#main-wrapper
+{
+    background-color: white;
+    width: 30%;
+    height: 100%;
+    margin: 120px auto;
+    padding: 50px;
+    box-shadow: 10px 10px 5px rgb(82, 11, 77);
+    border-radius: 6px;
+    overflow: auto;
+}
+
+#welcome-msg
+{
+    font-size: 27px;
+    text-align: center;
+}
+
+#sub_wrapper
+{
+    height: auto;
+}
+
+#form_wrapper
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_input
+{
+    width: 200px;
+    margin: 10% 0;
+    padding: 10px 0;
+    background-color: blueviolet;
+    color: white;
+    border-color: rgb(0,0,0);
+    border-width: 3px;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+.main_input:hover
+{
+    background-color: #8a2de1b7
+}

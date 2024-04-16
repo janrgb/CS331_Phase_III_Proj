@@ -20,6 +20,13 @@ body
     border-color: black;
     padding: 10px;
     font-size: large;
-    border-radius: 10px;
     margin: 0 auto;
+    border-width: 3px;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+#btn:hover
+{
+    background-color: #8a2de1b7
 }

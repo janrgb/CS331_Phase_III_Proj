@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="author" content="Janish Suneja and Ewan Lee"/>
         <meta name="description" content="This is a web page that is a test for database connections through the server."/>
-        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="styles_index.css"/>
         <link rel="icon" href="favicon.ico" type="image/db_icon.png"/>
     </head>
     <body>
