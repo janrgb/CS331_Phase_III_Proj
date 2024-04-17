@@ -7,6 +7,6 @@
         <link rel="stylesheet" href="styles_table.css">
     </head>
     <body>
-        <h1>WAREHOUSES</h1>
+        <h1>MATERIALS</h1>
     </body>
 </html>
