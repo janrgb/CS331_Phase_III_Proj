@@ -18,28 +18,30 @@
         <link rel="stylesheet" href="styles_table.css">
     </head>
     <body>
-        <h1>WAREHOUSES</h1>
-        <table>
-            <tr>
+        <div id="main-wrapper">
+            <h1 id="main-title">WAREHOUSES</h1>
+            <table id="main-table">
+                <tr>
+                    <?php
+                        $firstRow = reset($rows);
+                        foreach ($firstRow as $attribute => $value)
+                        {
+                            echo "<th scope='col'>$attribute</th>";
+                        }
+                    ?>
+                </tr>
                 <?php
-                    $firstRow = reset($rows);
-                    foreach ($firstRow as $attribute => $value)
-                    {
-                        echo "<th>$attribute</th>";
-                    }
-                ?>
-            </tr>
-            <?php
-            foreach ($rows as $row)
-            {
-                echo "<tr>";
-                foreach ($row as $value)
+                foreach ($rows as $row)
                 {
-                    echo "<td>$value</td>";
+                    echo "<tr>";
+                    foreach ($row as $value)
+                    {
+                        echo "<td>$value</td>";
+                    }
+                    echo "</tr>";
                 }
-                echo "</tr>";
-            }
-            ?>
-        </table>
+                ?>
+            </table>
+        </div>
     </body>
 </html>
